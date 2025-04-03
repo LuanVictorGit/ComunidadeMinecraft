@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junte-se à comunidade de desenvolvimento Minecraft no Discord! Participe da criação de plugins, configuração de servidores e descubra mais sobre o LegitAc, um poderoso anticheat em desenvolvimento.">
+    <meta name="keywords" content="Minecraft plugins, desenvolvimento de plugins Minecraft, comunidade Minecraft, configuração de servidores, anticheat Minecraft, LegitAc, scripts Minecraft, mods e plugins">
+    <link rel="icon" href="./images/icon.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/icon.jpeg" type="image/x-icon">
+    <title>Plugins Minecraft | Comunidade Minecraft – Desenvolvimento & Configurações</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        minecraft: {
+                            blue: '#3C44FF',
+                            darkblue: '#1A1F7A',
+                            lightblue: '#5E9AFF',
+                            sky: '#7BE0FF',
+                        },
+                    },
+                    fontFamily: {
+                        'minecraft': ['"Press Start 2P"', 'cursive'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+            font-family: 'minecraft', sans-serif;
+            overflow-x: hidden;
+            color: white;
+            background-color: #0a0a1a;
+        }
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        .background-gif {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            filter: brightness(0.8);
+        }
+        .content-overlay {
+            background-color: rgba(10, 10, 26, 0.85);
+        }
+        .btn-minecraft {
+            position: relative;
+            background: linear-gradient(180deg, #5E9AFF 0%, #3C44FF 100%);
+            border: 4px solid #1A1F7A;
+            box-shadow: 0 4px 0 #1A1F7A;
+            transition: all 0.1s ease;
+        }
+        .btn-minecraft:hover {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #1A1F7A;
+        }
+        .btn-minecraft:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        .minecraft-border {
+            border: 4px solid #3C44FF;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.3);
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(2px);
+        }
+        .skin-container {
+            perspective: 1000px;
+        }
+        .skin-model {
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <div class="background-container">
+        <img src="./images/background.gif" alt="Minecraft background animation" class="background-gif">
+    </div>
+    <div id="particles-js"></div>
+    <header class="py-6 px-4 sm:px-6 lg:px-8 text-center content-overlay">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-minecraft-blue mb-2">
+                <span class="text-minecraft-sky">Plugins</span> Minecraft
+            </h1>
+            <h2 class="text-xl sm:text-2xl text-minecraft-lightblue">
+                Comunidade de Desenvolvimento & Configurações
+            </h2>
+        </div>
+    </header>
+    <main class="flex-grow container mx-auto px-4 sm:px-6 py-8">
+        <section class="mb-16 text-center">
+            <div class="max-w-3xl mx-auto p-8 minecraft-border rounded-lg">
+                <h2 class="text-2xl sm:text-3xl text-minecraft-sky mb-6">Junte-se à Nossa Comunidade no Discord</h2>
+                <p class="text-minecraft-lightblue mb-6 text-sm sm:text-base">
+                    Um espaço dedicado para desenvolvedores de plugins, administradores de servidores e entusiastas de Minecraft. 
+                    Compartilhe conhecimento, colabore em projetos e aprenda sobre desenvolvimento de plugins e configuração de servidores.
+                </p>
+                <p class="text-minecraft-blue mb-8 text-sm sm:text-base">
+                    Destaque especial para o <strong class="text-minecraft-sky">LegitAc</strong>, nosso poderoso sistema anticheat em desenvolvimento ativo!
+                </p>
+                <a href="https://discord.gg/tNP6C8FRV2" target="_blank" class="btn-minecraft inline-block px-8 py-4 text-white font-bold rounded-lg text-lg animate-pulse-slow">
+                    ENTRAR NO DISCORD
+                </a>
+            </div>
+        </section>
+        <section class="mb-16">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto">
+                <div class="skin-container w-full md:w-1/3 flex justify-center">
+                    <div class="skin-model minecraft-border rounded-lg overflow-hidden" id="minecraft-skin">
+                        <img src="https://mc-heads.net/body/lHawk_/300" alt="Skin 3D de lHawk_" class="w-full h-auto">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 p-6 minecraft-border rounded-lg">
+                    <h3 class="text-xl sm:text-2xl text-minecraft-sky mb-4">Desenvolvedor Especializado</h3>
+                    <h4 class="text-lg text-minecraft-blue mb-6">lHawk_ - Criação de Plugins Personalizados</h4>
+                    <p class="text-minecraft-lightblue mb-6 text-sm sm:text-base">
+                        Com experiência em desenvolvimento de plugins para Minecraft, ofereço soluções personalizadas para seu servidor. 
+                        Desde sistemas simples até complexos mecanismos de anticheat como o LegitAc.
+                    </p>
+                    <div class="bg-minecraft-darkblue p-4 rounded-lg border-2 border-minecraft-blue">
+                        <p class="text-minecraft-sky text-sm sm:text-base">
+                            Precisa de um plugin personalizado para seu servidor? Entre em contato através do Discord!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-16">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-2xl text-minecraft-sky text-center mb-8">O Que Oferecemos</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 minecraft-border rounded-lg">
+                        <h4 class="text-minecraft-blue mb-4 text-lg">Desenvolvimento de Plugins</h4>
+                        <p class="text-minecraft-lightblue text-sm">
+                            Aprenda e colabore no desenvolvimento de plugins Java para Minecraft, desde sistemas básicos até complexos mecanismos.
+                        </p>
+                    </div>
+                    <div class="p-6 minecraft-border rounded-lg">
+                        <h4 class="text-minecraft-blue mb-4 text-lg">Configuração de Servidores</h4>
+                        <p class="text-minecraft-lightblue text-sm">
+                            Compartilhe conhecimento sobre configuração e otimização de servidores Minecraft para melhor performance.
+                        </p>
+                    </div>
+                    <div class="p-6 minecraft-border rounded-lg">
+                        <h4 class="text-minecraft-blue mb-4 text-lg">Projeto LegitAc</h4>
+                        <p class="text-minecraft-lightblue text-sm">
+                            Participe do desenvolvimento do LegitAc, um sistema anticheat avançado para servidores competitivos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-black bg-opacity-90 py-6 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-minecraft-lightblue text-sm mb-2">
+                © 2023 Comunidade de Plugins Minecraft. Todos os direitos reservados.
+            </p>
+            <p class="text-minecraft-blue text-xs">
+                Desenvolvido por <a href="https://www.luandev.blog.br/" class="text-minecraft-sky hover:underline">LuanDev</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 60,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#3C44FF"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.7,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#3C44FF",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+            const skinModel = document.getElementById('minecraft-skin');
+            let isMouseOver = false;
+
+            skinModel.addEventListener('mousemove', (e) => {
+                if (!isMouseOver) return;
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                skinModel.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
+
+            skinModel.addEventListener('mouseenter', () => {
+                isMouseOver = true;
+                skinModel.style.transition = 'none';
+            });
+
+            skinModel.addEventListener('mouseleave', () => {
+                isMouseOver = false;
+                skinModel.style.transition = 'all 0.5s ease';
+                skinModel.style.transform = 'rotateY(0deg) rotateX(0deg)';
+            });
+
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.minecraft-border');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            document.querySelectorAll('.minecraft-border').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease-out';
+            });
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html>
